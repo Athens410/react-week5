@@ -2,6 +2,7 @@
 import './App.css';
 import axios from 'axios';
 import React from "react";
+import Weather from './Weather';
 
 function App() {
   
@@ -18,17 +19,21 @@ function App() {
   
   
   return (
-    <div className="App">
+   
+  
+   
+    
+   <div className="App">
       <header className="App-header">
        
 
 
+       <Weather />
       
       
       
       
-      
-      
+     
        <div className="end">
        <h3>This project was coded by {""}{""}
         
