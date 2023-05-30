@@ -14,7 +14,7 @@
 }
 
 .App-header {
-  background-color: #084edc;
+  background-color: #000000;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -25,7 +25,11 @@
 }
 .text{
   text-decoration: none;
-  color: palevioletred;
+  color: rgb(208, 20, 83);
+  font-family: 'Red Hat Display', sans-serif;
+}
+.text:hover{
+  color: rgb(255, 147, 183);
 }
 
 .App-link {
