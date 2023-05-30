@@ -23,6 +23,10 @@
   font-size: calc(10px + 2vmin);
   color: white;
 }
+.text{
+  text-decoration: none;
+  color: palevioletred;
+}
 
 .App-link {
   color: #61dafb;
@@ -35,4 +39,5 @@
   to {
     transform: rotate(360deg);
   }
+  
 }
