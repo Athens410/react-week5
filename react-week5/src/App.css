@@ -23,6 +23,12 @@
   font-size: calc(10px + 2vmin);
   color: white;
 }
+.line{
+ border: 3px solid #61dafb;
+ padding: 100px;
+
+
+}
 .text{
   text-decoration: none;
   color: rgb(208, 20, 83);
