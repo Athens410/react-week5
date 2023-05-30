@@ -17,13 +17,14 @@ export default function weather (){
         
         
         <h1>London</h1>
-        <ul>
+        <ul class="week">
          <li>
             Monday 7:00
          </li>
          <li>
           Mostly cloudy
          </li>
+        
 
         </ul>
          <div className="row">
@@ -38,7 +39,7 @@ export default function weather (){
            
            
            <div className="col-6">
-            <ul>
+            <ul class="week">
               <li> 
             Precipitation: 2%
               </li>

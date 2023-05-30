@@ -23,14 +23,33 @@
   font-size: calc(10px + 2vmin);
   color: white;
 }
-.btn{
-  margin-left: 12px;
+.btn {
+  margin-left: 18px;
+  
+ 
 }
 .line{
  border: 3px solid #61dafb;
  padding: 100px;
 
 
+}
+.week{
+  margin: 44px;
+font-family: 'Red Hat Display', sans-serif;
+margin: 0 auto;
+color: aqua;
+margin-bottom: 39px;
+}
+
+.line h1{
+  color: aqua;
+  padding-top: 22px;
+  margin: 33px;
+  margin-bottom: 66px;
+  margin: 0 auto;
+  margin-bottom: 55px;
+  
 }
 .text{
   text-decoration: none;
