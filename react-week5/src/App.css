@@ -23,6 +23,9 @@
   font-size: calc(10px + 2vmin);
   color: white;
 }
+.btn{
+  margin-left: 12px;
+}
 .line{
  border: 3px solid #61dafb;
  padding: 100px;

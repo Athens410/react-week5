@@ -9,6 +9,13 @@ export default function weather (){
 
     return(
         <div className="line">
+        
+        <form>
+            <input type="search" placeholder="type a city.." className="form-contorl"/>
+            <input type="submit" value="search" className="btn btn-primary" />
+        </form>
+        
+        
         <h1>London</h1>
         <ul>
          <li>
