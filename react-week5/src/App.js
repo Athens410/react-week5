@@ -6,10 +6,12 @@ function App() {
     <div className="App">
       <header className="App-header">
        
-        <p>
-          HI!
-        </p>
-       
+
+
+       <div className="end">
+       <h3>This project was coded by Athenah Coucean and is opened-sourced on GitHub</h3>
+     </div>
+     
       </header>
     </div>
   );
