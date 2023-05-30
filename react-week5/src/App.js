@@ -9,7 +9,7 @@ function App() {
 
 
        <div className="end">
-       <h3>This project was coded by Athenah Coucean and is opened-sourced on GitHub</h3>
+       <h3>This project was coded by Athenah Coucean and is <a href="https://github.com/Athens410/react-week5.git">opened-sourced on GitHub</a></h3>
      </div>
      
       </header>
