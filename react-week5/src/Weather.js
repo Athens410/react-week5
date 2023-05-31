@@ -1,23 +1,23 @@
 import './App.css';
 import axios from 'axios';
-import React from "react";
+import React, {useState} from "react";
 
 
-export default function weather (props){
-
+export default function Weather (props){
+const [ ready, setReady] = useState(false);
+const [temperature, setTemperature]= useState(null);
 
 function handleResponse(response){
 
     console.log(response.data);
+    setTemperature(Math.round(response.data.main.temp));
+    setReady(true);
 }
 
 
- const apiKey ="c03face7caa58a9b7ffa9f52b7238a93";
- let city = "London";
- let apiUrl =`https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
- axios.get(apiUrl).then(handleResponse);
 
 
+if(ready){
     return(
         <div className="line">
         
@@ -43,7 +43,7 @@ function handleResponse(response){
             <img src="https://ssl.gstatic.com/onebox/weather/64/cloudy.png" alt="mostly cloudy" />
             
             
-            <span className="temperature">6</span>   <span className="unit">°C</span>
+            <span className="temperature">{temperature}</span>   <span className="unit">°C</span>
 
 
            </div>
@@ -77,5 +77,41 @@ function handleResponse(response){
              
              
              </div>
+
     );
+}else{
+
+
+ const apiKey ="c03face7caa58a9b7ffa9f52b7238a93";
+ let city = "London";
+ let apiUrl =`https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
+ axios.get(apiUrl).then(handleResponse);
+return (
+    
+    "loading"
+    
+);
+
+
+
+
+
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 }
