@@ -2,7 +2,7 @@ import './App.css';
 import axios from 'axios';
 import React, {useState} from "react";
 import {InfinitySpin}  from  'react-loader-spinner';
-import formattedDate from './formattedDate.js';
+import FormattedDate from './FormattedDate.js';
 
 
 export default function Weather (props){
@@ -52,7 +52,7 @@ if(weatherData.ready){
         <h1>{weatherData.city}</h1>
         <ul class="week">
          <li>
-         <formattedDate date={weatherData.date}  />
+         <FormattedDate date={weatherData.date}  />
          </li>
          <li className="text-capitalize">
          {weatherData.description}
