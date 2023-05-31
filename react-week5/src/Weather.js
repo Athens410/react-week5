@@ -2,7 +2,7 @@ import './App.css';
 import axios from 'axios';
 import React, {useState} from "react";
 import {InfinitySpin}  from  'react-loader-spinner';
-import formattedDate from './formattedDate';
+import formattedDate from './formattedDate.js';
 
 
 export default function Weather (props){
@@ -18,7 +18,7 @@ function handleResponse(response){
              temperature: response.data.main.temp,
              humidity: response.data.main.humidity,
              description: response.data.weather[0].description,
-             date: new Date(response.data.dt *1000),
+             date: new Date(response.data.dt * 1000),
              iconUrl: "https://ssl.gstatic.com/onebox/weather/64/cloudy.png",
              wind: response.data.wind.speed,
              city: response.data.name

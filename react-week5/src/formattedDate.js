@@ -5,5 +5,5 @@ export default function formattedDate(props){
 
 
 
-    return "thursday 10:00"
+    return ( "Thursday 10:00" );
 }
