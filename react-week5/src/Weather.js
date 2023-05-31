@@ -1,6 +1,7 @@
 import './App.css';
 import axios from 'axios';
 import React, {useState} from "react";
+import {InfinitySpin}  from  'react-loader-spinner';
 
 
 export default function Weather (props){
@@ -20,6 +21,10 @@ function handleResponse(response){
 if(ready){
     return(
         <div className="line">
+             <InfinitySpin 
+  width='200'
+  color="aqua"
+/>
         
         <form>
             <input type="search" placeholder="type a city.." className="form-contorl" autoFocus="on"/>
