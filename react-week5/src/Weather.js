@@ -2,7 +2,8 @@ import './App.css';
 import axios from 'axios';
 import React, {useState} from "react";
 import {InfinitySpin}  from  'react-loader-spinner';
-import FormattedDate from './FormattedDate.js';
+
+import WeatherInfo from './WeatherInfo';
 
 
 export default function Weather (props){
@@ -31,8 +32,18 @@ function handleResponse(response){
     
     
 }
+function handleSubmit(event){
 
 
+  event.preventDefault();
+  //search for a city
+}
+function handleCityChange (event) {
+
+
+
+
+}
 
 
 if(weatherData.ready){
@@ -43,55 +54,14 @@ if(weatherData.ready){
   color="aqua"
 />
         
-        <form>
-            <input type="search" placeholder="type a city.." className="form-contorl" autoFocus="on"/>
+        <form onSubmit={handleSubmit}>
+            <input type="search" placeholder="type a city.." className="form-contorl" autoFocus="on" onChange={handleCityChange}/>
             <input type="submit" value="search" className="btn btn-primary" />
         </form>
+        <WeatherInfo data ={weatherData} />
         
         
-        <h1>{weatherData.city}</h1>
-        <ul class="week">
-         <li>
-         <FormattedDate date={weatherData.date}  />
-         </li>
-         <li className="text-capitalize">
-         {weatherData.description}
-         </li>
-        
-
-        </ul>
-         <div className="row">
-           <div className="col-6">
-            <img src={weatherData.iconUrl} alt={weatherData.description} />
-            
-            
-            <span className="temperature">{Math.round(weatherData.temperature)}</span>   <span className="unit">°C</span>
-
-
-           </div>
-           
-           
-           
-           
-           
-           <div className="col-6">
-            <ul class="week">
-             
-              <li>
-            Humidity:{weatherData.humidity}%
-              </li>
-              <li>
-            Wind:{weatherData.wind}km/h
-              </li>
-
-
-            </ul>
-
-           </div>
-
-
-
-         </div>
+       
 
              
              
