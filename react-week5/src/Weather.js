@@ -1,5 +1,5 @@
 import './App.css';
-
+import axios from 'axios';
 import React from "react";
 
 
@@ -11,7 +11,7 @@ export default function weather (){
         <div className="line">
         
         <form>
-            <input type="search" placeholder="type a city.." className="form-contorl"/>
+            <input type="search" placeholder="type a city.." className="form-contorl" autoFocus="on"/>
             <input type="submit" value="search" className="btn btn-primary" />
         </form>
         
@@ -29,7 +29,10 @@ export default function weather (){
         </ul>
          <div className="row">
            <div className="col-6">
-            <img src="https://ssl.gstatic.com/onebox/weather/64/cloudy.png" alt="mostly cloudy" />6°C
+            <img src="https://ssl.gstatic.com/onebox/weather/64/cloudy.png" alt="mostly cloudy" />
+            
+            
+            <span className="temperature">6</span>   <span className="unit">°C</span>
 
 
            </div>
