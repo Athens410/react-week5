@@ -52,7 +52,7 @@ if(weatherData.ready){
         <h1>{weatherData.city}</h1>
         <ul class="week">
          <li>
-         <formattedDate date =  {weatherData.date} />
+         <formattedDate date={weatherData.date}  />
          </li>
          <li className="text-capitalize">
          {weatherData.description}
