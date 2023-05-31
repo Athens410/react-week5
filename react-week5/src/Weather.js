@@ -5,16 +5,21 @@ import {InfinitySpin}  from  'react-loader-spinner';
 
 
 export default function Weather (props){
-const [ ready, setReady] = useState(false);
-const [weatherData, setWeatherData]= useState({});
+
+const [weatherData, setWeatherData]= useState({ready: false});
 
 function handleResponse(response){
 
     console.log(response.data);
 
           setWeatherData({
+            ready: true,
              temperature: response.data.main.temp,
-             wind: 12,
+             humidity: response.data.main.humidity,
+             description: response.data.weather[0].description,
+             date: "Wednesday 7:00",
+             iconUrl: "https://ssl.gstatic.com/onebox/weather/64/cloudy.png",
+             wind: response.data.wind.speed,
              city: response.data.name
 
 
@@ -23,13 +28,13 @@ function handleResponse(response){
 
 
     
-    setReady(true);
+    
 }
 
 
 
 
-if(ready){
+if(weatherData.ready){
     return(
         <div className="line">
              <InfinitySpin 
@@ -46,9 +51,9 @@ if(ready){
         <h1>{weatherData.city}</h1>
         <ul class="week">
          <li>
-            Monday 7:00
+           {weatherData.date}
          </li>
-         <li>
+         <li className="text-capitalize">
          {weatherData.description}
          </li>
         
@@ -56,7 +61,7 @@ if(ready){
         </ul>
          <div className="row">
            <div className="col-6">
-            <img src="https://ssl.gstatic.com/onebox/weather/64/cloudy.png" alt="mostly cloudy" />
+            <img src={weatherData.iconUrl} alt={weatherData.description} />
             
             
             <span className="temperature">{Math.round(weatherData.temperature)}</span>   <span className="unit">°C</span>
@@ -70,11 +75,9 @@ if(ready){
            
            <div className="col-6">
             <ul class="week">
-              <li> 
-            Precipitation: 2%
-              </li>
+             
               <li>
-            Humidity: 73%
+            Humidity:{weatherData.humidity}%
               </li>
               <li>
             Wind:{weatherData.wind}km/h
@@ -99,8 +102,8 @@ if(ready){
 
 
  const apiKey ="c03face7caa58a9b7ffa9f52b7238a93";
- let city = "London";
- let apiUrl =`https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
+ 
+ let apiUrl =`https://api.openweathermap.org/data/2.5/weather?q=${props.defaultCity}&appid=${apiKey}&units=metric`;
  axios.get(apiUrl).then(handleResponse);
 return (
     

@@ -28,7 +28,7 @@ function App() {
        
 
 
-       <Weather />
+       <Weather defaultCity="London"/>
       
       
       
