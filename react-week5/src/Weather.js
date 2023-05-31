@@ -9,6 +9,7 @@ import WeatherInfo from './WeatherInfo';
 export default function Weather (props){
 
 const [weatherData, setWeatherData]= useState({ready: false});
+const [city, setCity] = useState(props.defaultCity);
 
 function handleResponse(response){
 
@@ -20,7 +21,7 @@ function handleResponse(response){
              humidity: response.data.main.humidity,
              description: response.data.weather[0].description,
              date: new Date(response.data.dt * 1000),
-             iconUrl: "https://ssl.gstatic.com/onebox/weather/64/cloudy.png",
+             iconUrl: `https://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`,
              wind: response.data.wind.speed,
              city: response.data.name
 
@@ -32,13 +33,36 @@ function handleResponse(response){
     
     
 }
+
+
+function Search (){
+
+
+ const apiKey ="c03face7caa58a9b7ffa9f52b7238a93";
+ 
+ let apiUrl =`https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
+ axios.get(apiUrl).then(handleResponse);
+
+
+
+}
+
+
+
+
+
+
+
+
 function handleSubmit(event){
 
 
   event.preventDefault();
-  //search for a city
+  Search();
 }
 function handleCityChange (event) {
+
+setCity(event.target.value);
 
 
 
@@ -49,17 +73,23 @@ function handleCityChange (event) {
 if(weatherData.ready){
     return(
         <div className="line">
-             <InfinitySpin 
-  width='200'
-  color="aqua"
-/>
-        
+
+      
         <form onSubmit={handleSubmit}>
             <input type="search" placeholder="type a city.." className="form-contorl" autoFocus="on" onChange={handleCityChange}/>
             <input type="submit" value="search" className="btn btn-primary" />
+            { city && (
+  <div className="loader-spinner">
+    <InfinitySpin width={200} color="aqua" />
+   
+  </div>
+)}
+              
         </form>
+      
+   
         <WeatherInfo data ={weatherData} />
-        
+          
         
        
 
@@ -72,15 +102,22 @@ if(weatherData.ready){
 }else{
 
 
- const apiKey ="c03face7caa58a9b7ffa9f52b7238a93";
+ Search();
+return 
+
+
+
+
  
- let apiUrl =`https://api.openweathermap.org/data/2.5/weather?q=${props.defaultCity}&appid=${apiKey}&units=metric`;
- axios.get(apiUrl).then(handleResponse);
-return (
+
+
+ 
+
+
+
+}
     
-    "loading"
-    
-);
+
 
 
 
@@ -104,4 +141,3 @@ return (
 
 
 
-}
