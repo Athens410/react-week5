@@ -6,12 +6,23 @@ import {InfinitySpin}  from  'react-loader-spinner';
 
 export default function Weather (props){
 const [ ready, setReady] = useState(false);
-const [temperature, setTemperature]= useState(null);
+const [weatherData, setWeatherData]= useState({});
 
 function handleResponse(response){
 
     console.log(response.data);
-    setTemperature(Math.round(response.data.main.temp));
+
+          setWeatherData({
+             temperature: response.data.main.temp,
+             wind: 12,
+             city: response.data.name
+
+
+
+          });
+
+
+    
     setReady(true);
 }
 
@@ -32,13 +43,13 @@ if(ready){
         </form>
         
         
-        <h1>London</h1>
+        <h1>{weatherData.city}</h1>
         <ul class="week">
          <li>
             Monday 7:00
          </li>
          <li>
-          Mostly cloudy
+         {weatherData.description}
          </li>
         
 
@@ -48,7 +59,7 @@ if(ready){
             <img src="https://ssl.gstatic.com/onebox/weather/64/cloudy.png" alt="mostly cloudy" />
             
             
-            <span className="temperature">{temperature}</span>   <span className="unit">°C</span>
+            <span className="temperature">{Math.round(weatherData.temperature)}</span>   <span className="unit">°C</span>
 
 
            </div>
@@ -66,7 +77,7 @@ if(ready){
             Humidity: 73%
               </li>
               <li>
-            Wind: 11 km/h
+            Wind:{weatherData.wind}km/h
               </li>
 
 
