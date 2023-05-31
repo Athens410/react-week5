@@ -3,8 +3,19 @@ import axios from 'axios';
 import React from "react";
 
 
-export default function weather (){
+export default function weather (props){
 
+
+function handleResponse(response){
+
+    console.log(response.data);
+}
+
+
+ const apiKey ="c03face7caa58a9b7ffa9f52b7238a93";
+ let city = "London";
+ let apiUrl =`https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
+ axios.get(apiUrl).then(handleResponse);
 
 
     return(
