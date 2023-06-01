@@ -53,9 +53,23 @@ margin: 0 auto;
 color: aqua;
 margin-bottom: 39px;
 }
-.you{
-  background-color: aliceblue;
-  font-family: 'Red Hat Display', sans-serif;
+@keyframes glowing {
+  0% {
+    text-shadow: 0 0 5px #e510f5;
+  }
+
+  50% {
+    text-shadow: 0 0 20px #daa8de;
+  }
+
+  100% {
+    text-shadow: 0 0 33px #ffffff;
+  }
+}
+
+/* Apply the glowing animation to the text */
+.glowing-text {
+  animation: glowing 2s infinite;
 }
 
 .line h1{

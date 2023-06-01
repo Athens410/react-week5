@@ -74,7 +74,7 @@ if(weatherData.ready){
     return(
         <div className="line">
 
-            <h1 className="you">SheCodes React Weather Search Engine</h1>
+            <h1 className="glowing-text">SheCodes React Weather Search Engine</h1>
         <form onSubmit={handleSubmit}>
             <input type="search" placeholder="type a city.." className="form-contorl" autoFocus="on" onChange={handleCityChange}/>
             <input type="submit" value="search" className="btn btn-primary" />
