@@ -99,24 +99,10 @@ if(weatherData.ready){
              </div>
 
     );
-}else{
-
-
- Search();
-return 
-
-
-
-
- 
-
-
- 
-
-
-
+}else {
+  Search();
+  return ("loading..");
 }
-    
 
 
 
