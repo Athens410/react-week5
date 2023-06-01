@@ -53,6 +53,10 @@ margin: 0 auto;
 color: aqua;
 margin-bottom: 39px;
 }
+.you{
+  background-color: aliceblue;
+  font-family: 'Red Hat Display', sans-serif;
+}
 
 .line h1{
   color: rgb(0, 251, 255);
@@ -65,11 +69,11 @@ margin-bottom: 39px;
 }
 .text{
   text-decoration: none;
-  color: rgb(208, 20, 83);
+  color: rgb(0, 255, 247);
   font-family: 'Red Hat Display', sans-serif;
 }
 .text:hover{
-  color: rgb(255, 147, 183);
+  color: rgb(0, 77, 202);
 }
 
 .App-link {
