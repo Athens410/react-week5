@@ -2,6 +2,7 @@ import './App.css';
 import axios from 'axios';
 import React, {useState} from "react";
 import {InfinitySpin}  from  'react-loader-spinner';
+import {Oval} from 'react-loader-spinner';
 
 import WeatherInfo from './WeatherInfo';
 
@@ -101,7 +102,19 @@ if(weatherData.ready){
     );
 }else {
   Search();
-  return ("loading..");
+  return (<Oval
+  height={111}
+  width={111}
+  color="aqua"
+  wrapperStyle={{}}
+  wrapperClass=""
+  visible={true}
+  ariaLabel='oval-loading'
+  secondaryColor="#4fa94d"
+  strokeWidth={2}
+  strokeWidthSecondary={2}
+
+/>);
 }
 
 
