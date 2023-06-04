@@ -103,16 +103,16 @@ if(weatherData.ready){
 }else {
   Search();
   return (<Oval
-  height={111}
-  width={111}
-  color="aqua"
+  height={100}
+  width={100}
+  color="black"
   wrapperStyle={{}}
   wrapperClass=""
   visible={true}
   ariaLabel='oval-loading'
-  secondaryColor="#4fa94d"
-  strokeWidth={2}
-  strokeWidthSecondary={2}
+  secondaryColor="aqua"
+  strokeWidth={5}
+  strokeWidthSecondary={3}
 
 />);
 }
